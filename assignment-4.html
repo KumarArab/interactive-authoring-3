@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        // Creating Canvas 
+
+        function createNormalHouse(canvas, color) {
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle = color[0];
+            ctx.fillRect(12.5, 60, 175, 100);
+
+            // Draw triangle
+            ctx.fillStyle = color[1];
+            ctx.beginPath();
+            ctx.moveTo(5, 60);
+            ctx.lineTo(195, 60);
+            ctx.lineTo(99, 0);
+            ctx.closePath();
+            ctx.fill();
+
+            //windows
+            ctx.fillStyle = color[2];
+            ctx.fillRect(25, 75, 35, 50);
+            ctx.fillStyle = color[0];
+            ctx.fillRect(27, 76, 13, 23);
+            ctx.fillRect(43, 100, 13, 23);
+            ctx.fillRect(43, 76, 13, 21);
+            ctx.fillRect(27, 102, 13, 21);
+
+            //door
+            ctx.fillStyle = color[3];
+            ctx.fillRect(80, 83, 40, 77);
+
+            //door knob
+            ctx.beginPath();
+            ctx.fillStyle = "#F2F2F2";
+            ctx.arc(115, 115, 3, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.closePath();
+
+
+        }
+        //create canvas
+        var canvas = document.createElement('canvas');
+
+        var colorset1 = ['#af0069', '#09015f', '#f6c065', '#312c51'];
+        var colorset2 = ['#e27802', '#58391c', '#222831', '#2c061f'];
+        //on mouse hover clear the canvas and create a new one
+        createNormalHouse(canvas, colorset2);
+        canvas.onmouseover = function() {
+            const context = canvas.getContext('2d');
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            createNormalHouse(canvas, colorset1);
+        };
+        //on mouse out, redraw the actual canvas
+        canvas.onmouseout = function() {
+            const context = canvas.getContext('2d');
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            createNormalHouse(canvas, colorset2);
+        }
+
+        // Adding Canvas to main 
+        document.body.appendChild(canvas);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // Creating Canvas 
+        var canvas = document.createElement('canvas');
+        canvas.height = 300;
+        canvas.width = 300;
+
+
+        var ctx = canvas.getContext('2d');
+        var gr = ctx.createLinearGradient(0, 200, 250, 250);
+
+        gr.addColorStop("0.2", "#007965");
+        gr.addColorStop("1", "#96bb7c");
+
+        ctx.fillStyle = gr;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        //Gradient Fill
+        var gr = ctx.createLinearGradient(0, 200, 200, 150);
+        gr.addColorStop(0.2, "#333");
+        gr.addColorStop(1, "#1a508b");
+        ctx.fillStyle = gr;
+        ctx.font = '35px Josefin Sans';
+        ctx.fillText('GRADIENT', 55, 60);
+
+
+
+
+        //Stroke Text
+        ctx.font = '45px Montserrat';
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 2;
+        ctx.strokeText('STROKED', 40, 155);
+
+
+        //Shadow text
+        ctx.strokeStyle = 'white';
+        ctx.shadowColor = '#e8e8e8';
+        ctx.shadowOffsetX = 10;
+        ctx.shadowOffsetY = 10;
+        ctx.shadowBlur = 10;
+        ctx.font = '30px Montserrat';
+
+        ctx.strokeText('SHADOWED', 50, 240);
+
+
+
+
+
+        // Adding Canvas to main 
+        document.body.appendChild(canvas);
+    </script>
+</body>
+
+</html>

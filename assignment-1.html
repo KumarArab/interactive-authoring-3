@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+        // Creating Canvas 
+        var canvas = document.createElement('canvas');
+        canvas.height = 300;
+        canvas.width = 300;
+
+
+        var ctx = canvas.getContext('2d');
+        var gr = ctx.createLinearGradient(100, 150, 250, 200);
+
+        gr.addColorStop("0.2", "#5eaaa8");
+        gr.addColorStop("1", "#a3d2ca");
+
+        ctx.fillStyle = gr;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Draw the red line.
+        ctx.beginPath();
+        ctx.strokeStyle = '#1c2b2d';
+        ctx.lineWidth = 2;
+        ctx.moveTo(10, 10);
+        ctx.lineTo(200, 10);
+        ctx.stroke();
+
+
+
+        // Draw the Circle with gradient border.
+        ctx.beginPath();
+        // Create linear gradient 
+        var gr = ctx.createLinearGradient(40, 0, 50, 200);
+
+        // Set color and position in a gradient object 
+        gr.addColorStop("0", "#944e6c");
+        gr.addColorStop("0.7", "#433d3c");
+
+        // Set stroke style to gradient 
+        ctx.strokeStyle = gr;
+
+        ctx.arc(80, 95, 50, 0, 2 * Math.PI);
+        ctx.lineWidth = 15;
+        ctx.stroke();
+
+
+        // Draw Rectangle with gradient Fill 
+        // Create gradient
+        var gr = ctx.createLinearGradient(0, 0, 200, 0);
+        gr.addColorStop(0, "#0d335d");
+        gr.addColorStop(1, "#1a508b");
+
+        // Fill with gradient
+        ctx.fillStyle = gr;
+        ctx.fillRect(20, 200, 150, 80);
+
+
+        //Draw Square with bold border
+        ctx.beginPath();
+        ctx.strokeStyle = '#374045';
+        ctx.lineWidth = 10;
+        ctx.rect(180, 40, 100, 100);
+        ctx.stroke();
+
+
+        // Draw Cirlce with gradient fill
+        ctx.beginPath();
+        // Create linear gradient 
+        var gr = ctx.createLinearGradient(200, 50, 50, 250);
+        gr.addColorStop(0, "#96bb7c");
+        gr.addColorStop(1, "#184d47");
+        // Set stroke style to gradient 
+        ctx.arc(230, 235, 40, 0, 2 * Math.PI);
+        ctx.fillStyle = gr;
+        ctx.lineWidth = 1;
+        ctx.fill();
+        ctx.stroke();
+
+
+        // Adding Canvas to main 
+        document.body.appendChild(canvas);
+    </script>
+
+</body>
+
+</html>
