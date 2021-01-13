@@ -57,16 +57,20 @@
 
         //Eye 1
         ctxeyes.beginPath();
-        ctxeyes.arc(110, 120, 25, 0, Math.PI * 2);
+        ctxeyes.moveTo(85, 120);
+        ctxeyes.lineTo(125, 120);
+        ctxeyes.arc(105, 120, 20, 0, Math.PI);
         ctxeyes.fill();
-        ctxeyes.stroke();
+
+
 
 
         //Eye 2
         ctxeyes.beginPath();
-        ctxeyes.arc(190, 120, 25, 0, Math.PI * 2);
+        ctxeyes.moveTo(160, 120);
+        ctxeyes.lineTo(200, 120);
+        ctxeyes.arc(180, 120, 20, 0, Math.PI);
         ctxeyes.fill();
-        ctxeyes.stroke();
 
         //Eyeballs
         var ctxeyeballs = canvas.getContext('2d');
@@ -75,13 +79,13 @@
 
         // Eyeball 1
         ctxeyeballs.beginPath();
-        ctxeyeballs.arc(105, 125, 15, 0, Math.PI * 2);
+        ctxeyeballs.arc(115, 127, 5, 0, Math.PI * 2);
         ctxeyeballs.fill();
         ctxeyeballs.stroke();
 
         // Eyeball 2
         ctxeyeballs.beginPath();
-        ctxeyeballs.arc(185, 125, 15, 0, Math.PI * 2);
+        ctxeyeballs.arc(190, 127, 5, 0, Math.PI * 2);
         ctxeyeballs.fill();
         ctxeyeballs.stroke();
 
@@ -95,35 +99,25 @@
 
         //Eyebrow 1
         ctxeyebrows.beginPath();
-        ctxeyebrows.moveTo(80, 100);
-        ctxeyebrows.bezierCurveTo(110, 70, 130, 80, 145, 110);
+        ctxeyebrows.moveTo(80, 105);
+        ctxeyebrows.bezierCurveTo(150, 120, 120, 80, 125, 100);
         ctxeyebrows.stroke();
 
         //Eyebrow 2
         ctxeyebrows.beginPath();
-        ctxeyebrows.moveTo(160, 110);
-        ctxeyebrows.bezierCurveTo(150, 60, 220, 80, 220, 100);
+        ctxeyebrows.moveTo(160, 105);
+        ctxeyebrows.bezierCurveTo(180, 120, 150, 80, 205, 100);
         ctxeyebrows.stroke();
 
-        // Nose
+        // Nose and lips
         var ctxnose = canvas.getContext('2d');
         ctxnose.strokeStyle = '#70af85';
         ctxnose.lineWidth = 6;
         ctxnose.beginPath();
-        ctxnose.moveTo(130, 180);
-        ctxnose.bezierCurveTo(140, 200, 190, 200, 160, 150);
+        ctxnose.moveTo(140, 150);
+        ctxnose.lineTo(135, 200);
+        ctxnose.bezierCurveTo(140, 200, 190, 200, 170, 205);
         ctxnose.stroke();
-
-
-        //Smile
-
-        var ctxsmile = canvas.getContext('2d');
-        ctxsmile.strokeStyle = '#333';
-        ctxsmile.lineWidth = 1;
-        ctxsmile.beginPath();
-        ctxsmile.moveTo(120, 210);
-        ctxsmile.bezierCurveTo(110, 210, 180, 240, 200, 200);
-        ctxsmile.stroke();
 
 
         // Adding Canvas to main 
