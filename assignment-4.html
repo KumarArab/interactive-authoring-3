@@ -18,14 +18,44 @@
             ctx.fillStyle = color[0];
             ctx.fillRect(12.5, 60, 175, 100);
 
+            // Draw houseside
+            ctx.fillStyle = color[0];
+            ctx.moveTo(188, 60);
+            ctx.lineTo(188, 160);
+            ctx.lineTo(300, 90);
+            ctx.lineTo(300, 40);
+            ctx.closePath();
+            ctx.fill();
+
             // Draw triangle
             ctx.fillStyle = color[1];
             ctx.beginPath();
             ctx.moveTo(5, 60);
             ctx.lineTo(195, 60);
+
             ctx.lineTo(99, 0);
             ctx.closePath();
             ctx.fill();
+
+            //door knob
+            ctx.beginPath();
+            ctx.fillStyle = "#F2F2F2";
+            ctx.arc(99, 25, 10, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.closePath();
+
+            // Draw Parallelogram
+            ctx.fillStyle = color[1];
+            ctx.beginPath();
+            ctx.lineTo(99, 0);
+            ctx.lineTo(195, 60);
+            ctx.lineTo(325, 40);
+            ctx.lineTo(205, 0);
+            ctx.closePath();
+            ctx.fill();
+
+
+
 
             //windows
             ctx.fillStyle = color[2];
@@ -51,7 +81,8 @@
         }
         //create canvas
         var canvas = document.createElement('canvas');
-
+        canvas.height = 500;
+        canvas.width = 500;
         var colorset1 = ['#af0069', '#09015f', '#f6c065', '#312c51'];
         var colorset2 = ['#e27802', '#58391c', '#222831', '#2c061f'];
         //on mouse hover clear the canvas and create a new one
